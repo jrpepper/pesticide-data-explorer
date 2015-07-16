@@ -1,0 +1,8 @@
+name: PRI-mapping
+account: jrpepper
+server: shinyapps.io
+bundleId: 218125
+url: https://jrpepper.shinyapps.io/PRI-mapping
+when: 1436565024.1597
+asMultiple: FALSE
+asStatic: FALSE

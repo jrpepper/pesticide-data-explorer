@@ -1,0 +1,8 @@
+name: PUR-Data-Explorer
+account: jrpepper
+server: shinyapps.io
+bundleId: 218645
+url: https://jrpepper.shinyapps.io/PUR-Data-Explorer
+when: 1436723677.56766
+asMultiple: FALSE
+asStatic: FALSE
