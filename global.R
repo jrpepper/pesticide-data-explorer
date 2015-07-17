@@ -13,12 +13,6 @@ library(magrittr)
 library(Hmisc)
 library(reshape2)
 
-#if csv files aren't there, download raw data from PUR website
-##############
-
-#generate fake data
-source("./generateFakeData.R") #creates variable fakeData
-
 #Load PUR Data
 allPUR <- read.csv("./data/PUR2012.csv")
 PUR <- subset(allPUR, allPUR$base_ln_mer!="") #get subset of pesticides that have values for MTRS

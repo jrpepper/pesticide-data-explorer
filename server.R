@@ -25,18 +25,6 @@ shinyServer(function(input, output, session) {
     data
   })
   
-  #filtered asthma data
-  filteredInhalers <- reactive({
-    data <- fakeData[fakeData$lat >= input$range[1] & fakeData$lat <= input$range[2] &
-                       fakeData$date >= input$dateRange[1] & fakeData$date <= input$dateRange[2]
-                     ,]
-    
-    if(!is.null(input$person)) {
-      data <- data[data$person %in% input$person,]
-    }
-    
-    data
-  })
   
   #update slider inputs when needed
   observe({
@@ -85,13 +73,6 @@ shinyServer(function(input, output, session) {
     else{
       radSize <- filteredPesticides()$acre_treated/max(filteredPesticides()$acre_treated)*5000
     }
-    
-    #add inhaler markers
-    leafletProxy("map", data = filteredInhalers()) %>%
-      addCircles(radius = 200, weight = 0.2, color = "#397eb9",
-                 group="inhalers",
-                 fillColor = "#397eb9", fillOpacity = 0.7, popup = ~paste(person,"<br>",date)
-      )
     
     #add pesticide markers
     leafletProxy('map', data = filteredPesticides()) %>%
